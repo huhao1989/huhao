@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/url.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="main">
+		<h2>阻止联系人REST服务</h2>
+		<div class="ul-fun">
+			<h4>功能列表:</h4>
+			<ul>
+					<li><a href="#添加阻止联系人">添加阻止联系人</a></li>
+					<li><a href="#删除阻止联系人">删除阻止联系人</a></li>
+					<li><a href="#设置企业阻止联系人">设置企业阻止联系人</a></li>
+					<li><a href="#取消企业阻止联系">取消企业阻止联系</a></li>
+					<li><a href="#按用户id取阻止联系人用户id">按用户id取阻止联系人用户id</a></li>
+			</ul>
+		</div>
+
+		<div>
+				<p class="p-fun"><a name="添加阻止联系人"></a>添加阻止联系人</p>
+				<p><span>请求地址:</span>"/sc/block/blockUser"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BlockUserParam.htm">BlockUserParam</a>的JSON：阻止联系人参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：添加成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="删除阻止联系人"></a>删除阻止联系人</p>
+				<p><span>请求地址:</span>"/sc/block/deleteBlockUser"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BlockUserParam.htm">BlockUserParam</a>的JSON：阻止联系人参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：删除成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="设置企业阻止联系人"></a>设置企业阻止联系人</p>
+				<p><span>请求地址:</span>"/sc/block/updateEntBlock"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntBlockParam.htm">EntBlockParam</a>的JSON：企业阻止联系参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>： 修改成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取消企业阻止联系"></a>取消企业阻止联系</p>
+				<p><span>请求地址:</span>"/sc/block/deleteEntBlock"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BlockParam.htm">BlockParam</a>的JSON：阻止参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：取消成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="按用户id取阻止联系人用户id"></a>按用户id取阻止联系人用户id</p>
+				<p><span>请求地址:</span>"/sc/block/getBlockUserIdsByUserId"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BlockUserParam.htm">BlockUserParam</a>的JSON：阻止联系人参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&ltLong&gt的JSON：用户id的list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+		</div>
+	</div>
+</body>
+</html>

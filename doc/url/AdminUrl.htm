@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/url.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="main">
+		<h2>二级管理员REST服务</h2>
+		<div class="ul-fun">
+			<h4>功能列表:</h4>
+			<ul>
+					<li><a href="#取企业的管理员列表">取企业的管理员列表</a></li>
+					<li><a href="#取管理员的授权文件夹列表">取管理员的授权文件夹列表</a></li>
+					<li><a href="#添加管理员">添加管理员</a></li>
+					<li><a href="#删除管理员">删除管理员</a></li>
+					<li><a href="#修改管理员权限">修改管理员权限</a></li>
+					<li><a href="#更换管理员">更换管理员</a></li>
+					<li><a href="#锁定管理员">锁定管理员</a></li>
+					<li><a href="#解锁管理员">解锁管理员</a></li>
+					<li><a href="#重置 超级管理员密码（私有云专用）">重置 超级管理员密码（私有云专用）</a></li>
+			</ul>
+		</div>
+
+		<div>
+				<p class="p-fun"><a name="取企业的管理员列表"></a>取企业的管理员列表</p>
+				<p><span>请求地址:</span>"/sc/admin/getAdminList"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/AdminDTO.htm">AdminDTO</a>&gt的JSON：管理员list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取管理员的授权文件夹列表"></a>取管理员的授权文件夹列表</p>
+				<p><span>请求地址:</span>"/sc/admin/getAdminFolderList"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/AdminParam.htm">AdminParam</a>的JSON：管理员参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/AdminFolderDTO.htm">AdminFolderDTO</a>&gt的JSON：授权文件夹list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="添加管理员"></a>添加管理员</p>
+				<p><span>请求地址:</span>"/sc/admin/addAdmin"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/CreateAdminParam.htm">CreateAdminParam</a>的JSON：管理员权限参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：添加成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="删除管理员"></a>删除管理员</p>
+				<p><span>请求地址:</span>"/sc/admin/delAdmin"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/AdminParam.htm">AdminParam</a>的JSON：管理员参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：删除成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="修改管理员权限"></a>修改管理员权限</p>
+				<p><span>请求地址:</span>"/sc/admin/updateAdmin"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/CreateAdminParam.htm">CreateAdminParam</a>的JSON：管理员权限参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：修改成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="更换管理员"></a>更换管理员</p>
+				<p><span>请求地址:</span>"/sc/admin/changeAdmin"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/ChangeAdminParam.htm">ChangeAdminParam</a>的JSON：更换管理员参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：更换成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="锁定管理员"></a>锁定管理员</p>
+				<p><span>请求地址:</span>"/sc/admin/lockAdmin"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/AdminParam.htm">AdminParam</a>的JSON：管理员参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：锁定成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="解锁管理员"></a>解锁管理员</p>
+				<p><span>请求地址:</span>"/sc/admin/unlockAdmin"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/AdminParam.htm">AdminParam</a>的JSON：管理员参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：解锁成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="重置 超级管理员密码（私有云专用）"></a>重置 超级管理员密码（私有云专用）</p>
+				<p><span>请求地址:</span>"/pub/admin/resetAdminPw"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li>无</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：修改成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+		</div>
+	</div>
+</body>
+</html>

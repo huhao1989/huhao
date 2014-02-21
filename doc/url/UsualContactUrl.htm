@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/url.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="main">
+		<h2>常用联系人REST服务</h2>
+		<div class="ul-fun">
+			<h4>功能列表:</h4>
+			<ul>
+					<li><a href="#创建联系人分组">创建联系人分组</a></li>
+					<li><a href="#重命名联系人分组">重命名联系人分组</a></li>
+					<li><a href="#删除联系人分组">删除联系人分组</a></li>
+					<li><a href="#添加联系人">添加联系人</a></li>
+					<li><a href="#批量添加联系人">批量添加联系人</a></li>
+					<li><a href="#删除联系人">删除联系人</a></li>
+					<li><a href="#批量删除联系人">批量删除联系人</a></li>
+					<li><a href="#取联系人分组列表">取联系人分组列表</a></li>
+					<li><a href="#取联系人分组列表和联系人列表">取联系人分组列表和联系人列表</a></li>
+			</ul>
+		</div>
+
+		<div>
+				<p class="p-fun"><a name="创建联系人分组"></a>创建联系人分组</p>
+				<p><span>请求地址:</span>"/sc/contact/createContactGroup"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/CreateContactGroupParam.htm">CreateContactGroupParam</a>的JSON：创建联系人分组参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>groupId：分组id</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorSameName：分组名重复</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="重命名联系人分组"></a>重命名联系人分组</p>
+				<p><span>请求地址:</span>"/sc/contact/renameContactGroup"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/RenameContactGroupParam.htm">RenameContactGroupParam</a>的JSON：重命名联系人分组参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：重命名成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="删除联系人分组"></a>删除联系人分组</p>
+				<p><span>请求地址:</span>"/sc/contact/deleteContactGroup"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/ContactGroupParam.htm">ContactGroupParam</a>的JSON：删除联系人分组参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：删除成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="添加联系人"></a>添加联系人</p>
+				<p><span>请求地址:</span>"/sc/contact/addContact"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/AddContactParam.htm">AddContactParam</a>的JSON：添加联系人参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：添加联系人成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="批量添加联系人"></a>批量添加联系人</p>
+				<p><span>请求地址:</span>"/sc/contact/addContacts"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/AddContactsParam.htm">AddContactsParam</a>的JSON：批量添加联系人参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：添加联系人成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="删除联系人"></a>删除联系人</p>
+				<p><span>请求地址:</span>"/sc/contact/deleteContact"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/ContactParam.htm">ContactParam</a>的JSON：联系人参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：删除联系人成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="批量删除联系人"></a>批量删除联系人</p>
+				<p><span>请求地址:</span>"/sc/contact/deleteContacts"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/ContactsParam.htm">ContactsParam</a>的JSON：联系人list参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：删除联系人成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取联系人分组列表"></a>取联系人分组列表</p>
+				<p><span>请求地址:</span>"/sc/contact/getContactGroupList"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/ContactGroupDTO.htm">ContactGroupDTO</a>&gt的JSON：联系人分组list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取联系人分组列表和联系人列表"></a>取联系人分组列表和联系人列表</p>
+				<p><span>请求地址:</span>"/sc/contact/getContactGroupAndUser"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/ContactGroupAndUserDTO.htm">ContactGroupAndUserDTO</a>的JSON：联系人分组和联系人list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+		</div>
+	</div>
+</body>
+</html>

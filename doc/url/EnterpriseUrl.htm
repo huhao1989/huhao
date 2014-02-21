@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/url.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="main">
+		<h2>企业REST服务</h2>
+		<div class="ul-fun">
+			<h4>功能列表:</h4>
+			<ul>
+					<li><a href="#企业注册">企业注册</a></li>
+					<li><a href="#判断企业帐号是否可用">判断企业帐号是否可用</a></li>
+					<li><a href="#修改企业logo">修改企业logo</a></li>
+					<li><a href="#修改企业信息">修改企业信息</a></li>
+					<li><a href="#按用户id取企业信息">按用户id取企业信息</a></li>
+					<li><a href="#按企业id取企业信息">按企业id取企业信息</a></li>
+					<li><a href="#设置员工默认密码">设置员工默认密码</a></li>
+					<li><a href="#按企业id取企业基本信息">按企业id取企业基本信息</a></li>
+					<li><a href="#退出登录">退出登录</a></li>
+					<li><a href="#企业快速注册">企业快速注册</a></li>
+					<li><a href="#企业完成注册">企业完成注册</a></li>
+			</ul>
+		</div>
+
+		<div>
+				<p class="p-fun"><a name="企业注册"></a>企业注册</p>
+				<p><span>请求地址:</span>"/pub/ent/register"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/RegisterParam.htm">RegisterParam</a>的JSON：企业注册参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：注册成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorCheckHashkey：数据未通过安全验证</li>
+							<li>errorEnterpriseAlreadyExist：企业已经存在</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="判断企业帐号是否可用"></a>判断企业帐号是否可用</p>
+				<p><span>请求地址:</span>"/pub/ent/isEntNameUsable"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li>entName：企业帐号</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：企业帐号可用</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorEnterpriseAlreadyExist：企业帐号不可用</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="修改企业logo"></a>修改企业logo</p>
+				<p><span>请求地址:</span>"/sc/ent/changeLogo"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/ChangeLogoParam.htm">ChangeLogoParam</a>的JSON：修改企业logo参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：修改成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="修改企业信息"></a>修改企业信息</p>
+				<p><span>请求地址:</span>"/sc/ent/updateEntInfo"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/UpdateEnterpriseParam.htm">UpdateEnterpriseParam</a>的JSON：修改企业信息参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：修改成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+							<li>errorSameName 企业名字重复</li>
+				</ul>
+				<p class="p-fun"><a name="按用户id取企业信息"></a>按用户id取企业信息</p>
+				<p><span>请求地址:</span>"/sc/ent/getEntInfoByUserId"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li>userId：用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EnterpriseDTO.htm">EnterpriseDTO</a>的JSON：企业信息</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="按企业id取企业信息"></a>按企业id取企业信息</p>
+				<p><span>请求地址:</span>"/sc/ent/getEntInfoByEntId"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li>entId：企业id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EnterpriseDTO.htm">EnterpriseDTO</a>的JSON：企业信息</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="设置员工默认密码"></a>设置员工默认密码</p>
+				<p><span>请求地址:</span>"/sc/ent/updateEmpDefaultPwd"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/UpdateEmpPwdParam.htm">UpdateEmpPwdParam</a>的JSON：设置员工默认密码参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：修改成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="按企业id取企业基本信息"></a>按企业id取企业基本信息</p>
+				<p><span>请求地址:</span>"/pub/ent/getSimpleEntInfoByEntId"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li>entId：企业id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/SimpleEntDTO.htm">SimpleEntDTO</a>的JSON：企业信息</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="退出登录"></a>退出登录</p>
+				<p><span>请求地址:</span>"/sc/ent/checkEntStatus"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：检查成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorAuditFail：该企业服务已停止</li>
+							<li>errorAccountExpired：该企业服务已过期</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="企业快速注册"></a>企业快速注册</p>
+				<p><span>请求地址:</span>"/pub/ent/simpleRegister"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/SimpleRegisterParam.htm">SimpleRegisterParam</a>的JSON：快速注册参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：注册成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorAccountUsed：帐号已被使用</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="企业完成注册"></a>企业完成注册</p>
+				<p><span>请求地址:</span>"/pub/ent/registerDone"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/RegisterDoneParam.htm">RegisterDoneParam</a>的JSON：完成注册参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：注册成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorAccountUsed：帐号已被使用</li>
+							<li>errorEnterpriseAlreadyExist：企业名重复</li>
+							<li>error500：系统错误</li>
+				</ul>
+		</div>
+	</div>
+</body>
+</html>

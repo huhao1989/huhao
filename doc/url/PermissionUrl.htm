@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/url.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="main">
+		<h2>角色权限REST服务</h2>
+		<div class="ul-fun">
+			<h4>功能列表:</h4>
+			<ul>
+					<li><a href="#检查企业网盘文件夹权限">检查企业网盘文件夹权限</a></li>
+					<li><a href="#检查企业网盘同一文件夹多种权限">检查企业网盘同一文件夹多种权限</a></li>
+					<li><a href="#检查多个文件夹同一权限">检查多个文件夹同一权限</a></li>
+					<li><a href="#新建角色">新建角色</a></li>
+					<li><a href="#重命名角色">重命名角色</a></li>
+					<li><a href="#删除角色">删除角色</a></li>
+					<li><a href="#取单个角色">取单个角色</a></li>
+					<li><a href="#取可管理的角色列表">取可管理的角色列表</a></li>
+					<li><a href="#设置文件夹权限">设置文件夹权限</a></li>
+					<li><a href="#设置单个用户文件夹权限">设置单个用户文件夹权限</a></li>
+					<li><a href="#设置用户权限">设置用户权限</a></li>
+					<li><a href="#设置角色权限">设置角色权限</a></li>
+					<li><a href="#按文件夹取用户权限">按文件夹取用户权限</a></li>
+					<li><a href="#按用户取文件夹权限">按用户取文件夹权限</a></li>
+					<li><a href="#按角色取文件夹权限">按角色取文件夹权限</a></li>
+					<li><a href="#按角色取其包含用户">按角色取其包含用户</a></li>
+					<li><a href="#按角色取文件夹权限和用户">按角色取文件夹权限和用户</a></li>
+			</ul>
+		</div>
+
+		<div>
+				<p class="p-fun"><a name="检查企业网盘文件夹权限"></a>检查企业网盘文件夹权限</p>
+				<p><span>请求地址:</span>"/sc/entDisk/checkEntFolderPermission"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/CheckPermissionParam.htm">CheckPermissionParam</a>的JSON：检查文件夹权限参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：有权限</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：无权限</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="检查企业网盘同一文件夹多种权限"></a>检查企业网盘同一文件夹多种权限</p>
+				<p><span>请求地址:</span>"/sc/entDisk/checkEntFolderPermissions"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/CheckPermissionsParam.htm">CheckPermissionsParam</a>的JSON：检查同一文件夹多种权限参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/CheckFolderPermissionResultDTO.htm">CheckFolderPermissionResultDTO</a>&gt的JSON：检查企业网盘文件夹权限结果</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="检查多个文件夹同一权限"></a>检查多个文件夹同一权限</p>
+				<p><span>请求地址:</span>"/sc/entDisk/checkEntFoldersPermission"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/CheckFoldersPermissionParam.htm">CheckFoldersPermissionParam</a>的JSON：检查多个文件夹同一权限参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：有权限</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：无权限</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="新建角色"></a>新建角色</p>
+				<p><span>请求地址:</span>"/sc/entDisk/createRole"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/CreateRoleParam.htm">CreateRoleParam</a>的JSON：新建角色参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>roleId：角色id</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorSameName：角色名重复</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="重命名角色"></a>重命名角色</p>
+				<p><span>请求地址:</span>"/sc/entDisk/renameRole"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/RenameRoleParam.htm">RenameRoleParam</a>的JSON：重命名角色参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：重命名成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorSameName：角色名重复</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="删除角色"></a>删除角色</p>
+				<p><span>请求地址:</span>"/sc/entDisk/deleteRoleById"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/RoleIdParam.htm">RoleIdParam</a>的JSON：角色id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：删除成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取单个角色"></a>取单个角色</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getRoleById"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/RoleIdParam.htm">RoleIdParam</a>的JSON：角色id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/RoleDTO.htm">RoleDTO</a>的JSON：角色信息</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取可管理的角色列表"></a>取可管理的角色列表</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getRoleList"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/RoleDTO.htm">RoleDTO</a>&gt的JSON：角色list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="设置文件夹权限"></a>设置文件夹权限</p>
+				<p><span>请求地址:</span>"/sc/entDisk/updateFolderPermission"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FolderPermissionParam.htm">FolderPermissionParam</a>的JSON：设置文件夹权限参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：设置成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="设置单个用户文件夹权限"></a>设置单个用户文件夹权限</p>
+				<p><span>请求地址:</span>"/sc/entDisk/updateSingleUserFolderPermission"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/SingleUserFolderPermissionParam.htm">SingleUserFolderPermissionParam</a>的JSON：单个用户文件夹权限参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：设置成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="设置用户权限"></a>设置用户权限</p>
+				<p><span>请求地址:</span>"/sc/entDisk/updateUserPermission"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/UserPermissionParam.htm">UserPermissionParam</a>的JSON：设置用户权限参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：设置成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="设置角色权限"></a>设置角色权限</p>
+				<p><span>请求地址:</span>"/sc/entDisk/updateRolePermission"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/RolePermissionParam.htm">RolePermissionParam</a>的JSON：角色权限参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：设置成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="按文件夹取用户权限"></a>按文件夹取用户权限</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getUserPermissionsByFolderId"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FolderIdParam.htm">FolderIdParam</a>的JSON：文件夹id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/UserPermissionDTO.htm">UserPermissionDTO</a>&gt的JSON：权限list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="按用户取文件夹权限"></a>按用户取文件夹权限</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getFolderPermissionsByUserId"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/FolderPermissionDTO.htm">FolderPermissionDTO</a>&gt的JSON：权限list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="按角色取文件夹权限"></a>按角色取文件夹权限</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getFolderPermissionsByRoleId"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/RoleIdParam.htm">RoleIdParam</a>的JSON：角色id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/FolderPermissionDTO.htm">FolderPermissionDTO</a>&gt的JSON：权限list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="按角色取其包含用户"></a>按角色取其包含用户</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getUsersByRoleId"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/RoleIdParam.htm">RoleIdParam</a>的JSON：角色id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/SimpleUserDTO.htm">SimpleUserDTO</a>&gt的JSON：用户list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="按角色取文件夹权限和用户"></a>按角色取文件夹权限和用户</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getFolderPermissionsAndUserByRoleId"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/RoleIdParam.htm">RoleIdParam</a>的JSON：角色id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/PermissionAndUserDTO.htm">PermissionAndUserDTO</a>的JSON：权限和用户</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+		</div>
+	</div>
+</body>
+</html>

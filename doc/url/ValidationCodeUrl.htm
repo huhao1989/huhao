@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/url.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="main">
+		<h2>验证码REST服务</h2>
+		<div class="ul-fun">
+			<h4>功能列表:</h4>
+			<ul>
+					<li><a href="#<span class='deprecated'>生成验证码</span>"><span class='deprecated'>生成验证码</span></a></li>
+					<li><a href="#<span class='deprecated'>校验验证码</span>"><span class='deprecated'>校验验证码</span></a></li>
+					<li><a href="#发送验证信息">发送验证信息</a></li>
+					<li><a href="#校验验证信息">校验验证信息</a></li>
+			</ul>
+		</div>
+
+		<div>
+				<p class="p-fun"><a name="<span class='deprecated'>生成验证码</span>"></a><span class='deprecated'>生成验证码</span></p>
+				<p><span>请求地址:</span>"/pub/createValidationCode"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li>clientId</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/ValidationCodeDTO.htm">ValidationCodeDTO</a>的JSON：验证码</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="<span class='deprecated'>校验验证码</span>"></a><span class='deprecated'>校验验证码</span></p>
+				<p><span>请求地址:</span>"/pub/checkValidationCode"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/ValidationCodeDTO.htm">ValidationCodeDTO</a>的JSON：验证码</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：校验成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="发送验证信息"></a>发送验证信息</p>
+				<p><span>请求地址:</span>"/pub/code/sendValidationMsg"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/SendValidationMsgParam.htm">SendValidationMsgParam</a>的JSON：快速注册参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：发送成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="校验验证信息"></a>校验验证信息</p>
+				<p><span>请求地址:</span>"/pub/code/checkValidationMsg"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/CheckValidationMsgParam.htm">CheckValidationMsgParam</a>的JSON：验证信息参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：验证成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorValidationCode：验证码错误</li>
+							<li>error500：系统错误</li>
+				</ul>
+		</div>
+	</div>
+</body>
+</html>

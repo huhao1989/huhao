@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/url.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="main">
+		<h2>关注REST服务</h2>
+		<div class="ul-fun">
+			<h4>功能列表:</h4>
+			<ul>
+					<li><a href="#关注企业网盘文件夹">关注企业网盘文件夹</a></li>
+					<li><a href="#关注企业网盘文件">关注企业网盘文件</a></li>
+					<li><a href="#关注企业网盘文件夹和文件">关注企业网盘文件夹和文件</a></li>
+					<li><a href="#取用户关注的文件夹和文件">取用户关注的文件夹和文件</a></li>
+					<li><a href="#取消关注企业网盘文件夹">取消关注企业网盘文件夹</a></li>
+					<li><a href="#取消关注企业网盘文件">取消关注企业网盘文件</a></li>
+					<li><a href="#取消关注企业网盘文件夹和文件">取消关注企业网盘文件夹和文件</a></li>
+					<li><a href="#判断企业网盘文件夹是否被关注">判断企业网盘文件夹是否被关注</a></li>
+					<li><a href="#判断企业网盘文件是否被关注">判断企业网盘文件是否被关注</a></li>
+					<li><a href="#分页取关注列表">分页取关注列表</a></li>
+					<li><a href="#判断企业网盘文件是否被关注">判断企业网盘文件是否被关注</a></li>
+			</ul>
+		</div>
+
+		<div>
+				<p class="p-fun"><a name="关注企业网盘文件夹"></a>关注企业网盘文件夹</p>
+				<p><span>请求地址:</span>"/sc/entDisk/remindEntFolder"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FolderIdParam.htm">FolderIdParam</a>的JSON：企业网盘文件夹id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：关注成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有权限</li>
+							<li>errorFolderDeleted：文件夹已删除</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="关注企业网盘文件"></a>关注企业网盘文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/remindEntFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FileIdParam.htm">FileIdParam</a>的JSON：企业网盘文件id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：关注成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有权限</li>
+							<li>errorFileDeleted：文件已删除</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="关注企业网盘文件夹和文件"></a>关注企业网盘文件夹和文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/remindEntFolderAndFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FolderAndFileIdParam.htm">FolderAndFileIdParam</a>的JSON：企业网盘文件夹id和文件id基本参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：关注成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有权限</li>
+							<li>errorFolderDeleted：文件夹已删除</li>
+							<li>errorFileDeleted：文件已删除</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取用户关注的文件夹和文件"></a>取用户关注的文件夹和文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getRemindEntFolderAndFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EntFolderAndFileDTO.htm">EntFolderAndFileDTO</a>的JSON：企业网盘文件夹list和文件list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取消关注企业网盘文件夹"></a>取消关注企业网盘文件夹</p>
+				<p><span>请求地址:</span>"/sc/entDisk/deleteRemindEntFolder"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FolderIdParam.htm">FolderIdParam</a>的JSON：企业网盘文件夹id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：取消关注成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取消关注企业网盘文件"></a>取消关注企业网盘文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/deleteRemindEntFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FileIdParam.htm">FileIdParam</a>的JSON：企业网盘文件id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：取消关注成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取消关注企业网盘文件夹和文件"></a>取消关注企业网盘文件夹和文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/deleteRemindEntFolderAndFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FolderAndFileIdParam.htm">FolderAndFileIdParam</a>的JSON：企业网盘文件夹id和文件id基本参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：取消关注成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="判断企业网盘文件夹是否被关注"></a>判断企业网盘文件夹是否被关注</p>
+				<p><span>请求地址:</span>"/sc/entDisk/isEntFolderReminded"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FolderIdParam.htm">FolderIdParam</a>的JSON：企业网盘文件夹id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#TRUE_MARK">CommConstants.TRUE_MARK</a>：被关注</li>
+							<li><a href="../status/CommConstants.htm#FALSE_MARK">CommConstants.FALSE_MARK</a>：没有被关注</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="判断企业网盘文件是否被关注"></a>判断企业网盘文件是否被关注</p>
+				<p><span>请求地址:</span>"/sc/entDisk/isEntFileReminded"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FileIdParam.htm">FileIdParam</a>的JSON：企业网盘文件id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#TRUE_MARK">CommConstants.TRUE_MARK</a>：被关注</li>
+							<li><a href="../status/CommConstants.htm#FALSE_MARK">CommConstants.FALSE_MARK</a>：没有被关注</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="分页取关注列表"></a>分页取关注列表</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getPagedRemindEntFiles"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/PageQueryParam.htm">PageQueryParam</a>的JSON：分页查询参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EntFolderAndFileDTO.htm">EntFolderAndFileDTO</a>的JSON：企业网盘文件夹list和文件list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="判断企业网盘文件是否被关注"></a>判断企业网盘文件是否被关注</p>
+				<p><span>请求地址:</span>"/sc/entDisk/isEntFilesReminded"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/CheckEntRemindedParam.htm">CheckEntRemindedParam</a>的JSON：检查企业文件关注参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#TRUE_MARK">CommConstants.TRUE_MARK</a>：被关注</li>
+							<li><a href="../status/CommConstants.htm#FALSE_MARK">CommConstants.FALSE_MARK</a>：没有被关注</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+		</div>
+	</div>
+</body>
+</html>

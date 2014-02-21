@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/url.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="main">
+		<h2>企业网盘历史REST服务</h2>
+		<div class="ul-fun">
+			<h4>功能列表:</h4>
+			<ul>
+					<li><a href="#分页取企业网盘关注更新">分页取企业网盘关注更新</a></li>
+					<li><a href="#取企业网盘文件历史记录">取企业网盘文件历史记录</a></li>
+					<li><a href="#取企业网盘文件夹历史记录">取企业网盘文件夹历史记录</a></li>
+					<li><a href="#取企业网盘文件历史版本详细">取企业网盘文件历史版本详细</a></li>
+					<li><a href="#取企业网盘文件夹历史版本详细">取企业网盘文件夹历史版本详细</a></li>
+					<li><a href="#恢复企业网盘文件夹历史版本">恢复企业网盘文件夹历史版本</a></li>
+					<li><a href="#恢复企业网盘文件历史版本">恢复企业网盘文件历史版本</a></li>
+					<li><a href="#按文件版本取单个企业网盘文件信息（不包含状态信息）">按文件版本取单个企业网盘文件信息（不包含状态信息）</a></li>
+					<li><a href="#删除企业网盘文件历史版本">删除企业网盘文件历史版本</a></li>
+			</ul>
+		</div>
+
+		<div>
+				<p class="p-fun"><a name="分页取企业网盘关注更新"></a>分页取企业网盘关注更新</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntDiskHistory"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/PageQueryParam.htm">PageQueryParam</a>的JSON：取企业网盘历史记录参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EntDiskHistoriesDTO.htm">EntDiskHistoriesDTO</a>的JSON：企业网盘历史记录</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取企业网盘文件历史记录"></a>取企业网盘文件历史记录</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntFileHistory"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FileIdParam.htm">FileIdParam</a>的JSON：企业网盘文件id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/EntDiskVersionDTO.htm">EntDiskVersionDTO</a>&gt的JSON：历史记录list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取企业网盘文件夹历史记录"></a>取企业网盘文件夹历史记录</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntFolderHistory"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FolderIdParam.htm">FolderIdParam</a>的JSON：企业网盘文件夹id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/EntDiskVersionDTO.htm">EntDiskVersionDTO</a>&gt的JSON：历史记录list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取企业网盘文件历史版本详细"></a>取企业网盘文件历史版本详细</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntFileVersionDetail"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntFileParam.htm">EntFileParam</a>的JSON：企业网盘文件参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/EntDiskHistoryDTO.htm">EntDiskHistoryDTO</a>&gt的JSON：历史记录list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取企业网盘文件夹历史版本详细"></a>取企业网盘文件夹历史版本详细</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntFolderVersionDetail"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntFolderParam.htm">EntFolderParam</a>的JSON：企业网盘文件夹参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/EntDiskHistoryDTO.htm">EntDiskHistoryDTO</a>&gt的JSON：历史记录list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="恢复企业网盘文件夹历史版本"></a>恢复企业网盘文件夹历史版本</p>
+				<p><span>请求地址:</span>"/sc/entDisk/restoreEntFolderVersion"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntFolderParam.htm">EntFolderParam</a>的JSON：企业网盘文件夹信息</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：恢复成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有权限</li>
+							<li>errorSameFile：目录下已经有与此同名的文件存在</li>
+							<li>errorSameFolder：父目录下已经有与此同名的目录存在</li>
+							<li>errorFolderSpaceOver：文件夹空间已满</li>
+							<li>errorNoSpace：企业网盘空间已满</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="恢复企业网盘文件历史版本"></a>恢复企业网盘文件历史版本</p>
+				<p><span>请求地址:</span>"/sc/entDisk/restoreEntFileVersion"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntFileParam.htm">EntFileParam</a>的JSON：企业网盘文件信息</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：恢复成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有权限</li>
+							<li>errorSameFile：目录下已经有与此同名的文件存在</li>
+							<li>errorFolderSpaceOver：文件夹空间已满</li>
+							<li>errorNoSpace：企业网盘空间已满</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="按文件版本取单个企业网盘文件信息（不包含状态信息）"></a>按文件版本取单个企业网盘文件信息（不包含状态信息）</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntFileByVersion"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntFileParam.htm">EntFileParam</a>的JSON：企业网盘文件参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EnterpriseFileDTO.htm">EnterpriseFileDTO</a>的JSON：企业网盘文件信息</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="删除企业网盘文件历史版本"></a>删除企业网盘文件历史版本</p>
+				<p><span>请求地址:</span>"/sc/entDisk/deleteEntFileHistory"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntFileParam.htm">EntFileParam</a>的JSON：企业网盘文件信息</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：删除成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有权限</li>
+							<li>error500：系统错误</li>
+				</ul>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/url.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="main">
+		<h2>云电话REST服务</h2>
+		<div class="ul-fun">
+			<h4>功能列表:</h4>
+			<ul>
+					<li><a href="#添加电话联系人">添加电话联系人</a></li>
+					<li><a href="#修改电话联系人">修改电话联系人</a></li>
+					<li><a href="#删除电话联系人">删除电话联系人</a></li>
+					<li><a href="#取电话联系人列表">取电话联系人列表</a></li>
+					<li><a href="#批量删除电话联系人">批量删除电话联系人</a></li>
+					<li><a href="#获取云电话服务信息">获取云电话服务信息</a></li>
+					<li><a href="#修改云电话号码">修改云电话号码</a></li>
+					<li><a href="#建立通话">建立通话</a></li>
+					<li><a href="#创建电话会议">创建电话会议</a></li>
+					<li><a href="#添加参会人">添加参会人</a></li>
+					<li><a href="#挂断通话">挂断通话</a></li>
+					<li><a href="#主持人挂断会议">主持人挂断会议</a></li>
+					<li><a href="#普通参会成员挂断会议">普通参会成员挂断会议</a></li>
+					<li><a href="#获取云电话消费账单">获取云电话消费账单</a></li>
+					<li><a href="#获取未核准通话时间的通话">获取未核准通话时间的通话</a></li>
+			</ul>
+		</div>
+
+		<div>
+				<p class="p-fun"><a name="添加电话联系人"></a>添加电话联系人</p>
+				<p><span>请求地址:</span>"/sc/tel/addTelContact"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/AddTelContactParam.htm">AddTelContactParam</a>的JSON：添加电话联系人参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>telId</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="修改电话联系人"></a>修改电话联系人</p>
+				<p><span>请求地址:</span>"/sc/tel/updateTelContact"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/UpdateTelContactParam.htm">UpdateTelContactParam</a>的JSON：修改电话联系人参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：修改成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="删除电话联系人"></a>删除电话联系人</p>
+				<p><span>请求地址:</span>"/sc/tel/deleteTelContact"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/TelIdParam.htm">TelIdParam</a>的JSON：联系人id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：删除成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取电话联系人列表"></a>取电话联系人列表</p>
+				<p><span>请求地址:</span>"/sc/tel/getTelContactList"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/TelContactDTO.htm">TelContactDTO</a>&gt的JSON：电话联系人的list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="批量删除电话联系人"></a>批量删除电话联系人</p>
+				<p><span>请求地址:</span>"/sc/tel/deleteTelContacts"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/TelIdsParam.htm">TelIdsParam</a>的JSON：联系人id的list参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：删除成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="获取云电话服务信息"></a>获取云电话服务信息</p>
+				<p><span>请求地址:</span>"/sc/tel/getTelServiceInfo"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/TelServiceDTO.htm">TelServiceDTO</a> 的JSON：云电话服务信息</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="修改云电话号码"></a>修改云电话号码</p>
+				<p><span>请求地址:</span>"/sc/tel/updateTelNumber"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/TelNumberParam.htm">TelNumberParam</a>的JSON：云电话号码参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：修改号码成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="建立通话"></a>建立通话</p>
+				<p><span>请求地址:</span>"/sc/tel/createTelCall"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/CreateTelCallParam.htm">CreateTelCallParam</a>的JSON：建立通话参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：创建成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="创建电话会议"></a>创建电话会议</p>
+				<p><span>请求地址:</span>"/sc/tel/createTelMeeting"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/CreateTelMeetingParam.htm">CreateTelMeetingParam</a>的JSON：创建电话会议参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：创建成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="添加参会人"></a>添加参会人</p>
+				<p><span>请求地址:</span>"/sc/tel/addTelMeetingMember"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/AddTelMeetingMemberParam.htm">AddTelMeetingMemberParam</a>的JSON：添加参会人参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：添加成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="挂断通话"></a>挂断通话</p>
+				<p><span>请求地址:</span>"/pub/tel/hangUpTelCall"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/HangUpTelParam.htm">HangUpTelParam</a>的JSON：挂断通话参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：挂断成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="主持人挂断会议"></a>主持人挂断会议</p>
+				<p><span>请求地址:</span>"/pub/tel/hangUpTelMeeting"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/HangUpTelParam.htm">HangUpTelParam</a>的JSON：挂断会议参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：挂断成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="普通参会成员挂断会议"></a>普通参会成员挂断会议</p>
+				<p><span>请求地址:</span>"/sc/tel/hangUpTelMeetingMember"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/HangUpTelMeetingParam.htm">HangUpTelMeetingParam</a>的JSON：挂断会议参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：挂断成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="获取云电话消费账单"></a>获取云电话消费账单</p>
+				<p><span>请求地址:</span>"/sc/tel/getTelBills"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/PageQueryParam.htm">PageQueryParam</a>的JSON：分页参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/TellBillsDTO.htm">TellBillsDTO</a> 的JSON：云电话消费账单list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="获取未核准通话时间的通话"></a>获取未核准通话时间的通话</p>
+				<p><span>请求地址:</span>"/pub/tel/getUnckeckedTels"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/UncheckedTelDTO.htm">UncheckedTelDTO</a> 的JSON：云电话list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+		</div>
+	</div>
+</body>
+</html>

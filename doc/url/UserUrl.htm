@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/url.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="main">
+		<h2>同事REST服务</h2>
+		<div class="ul-fun">
+			<h4>功能列表:</h4>
+			<ul>
+					<li><a href="#统计企业在线用户数">统计企业在线用户数</a></li>
+					<li><a href="#修改用户头像">修改用户头像</a></li>
+					<li><a href="#修改用户在线状态">修改用户在线状态</a></li>
+					<li><a href="#取同事在线状态">取同事在线状态</a></li>
+					<li><a href="#添加部门">添加部门</a></li>
+					<li><a href="#<span class='deprecated'>添加同事</span>"><span class='deprecated'>添加同事</span></a></li>
+					<li><a href="#修改用户信息">修改用户信息</a></li>
+					<li><a href="#<span class='deprecated'>取用户信息</span>"><span class='deprecated'>取用户信息</span></a></li>
+					<li><a href="#按用户id取用户信息">按用户id取用户信息</a></li>
+					<li><a href="#导入用户">导入用户</a></li>
+					<li><a href="#按用户取部门和同事列表，包括用户在线状态">按用户取部门和同事列表，包括用户在线状态</a></li>
+					<li><a href="#重命名部门">重命名部门</a></li>
+					<li><a href="#删除部门">删除部门</a></li>
+					<li><a href="#修改部门排序">修改部门排序</a></li>
+					<li><a href="#取单个部门信息">取单个部门信息</a></li>
+					<li><a href="#<span class='deprecated'>取部门列表</span>"><span class='deprecated'>取部门列表</span></a></li>
+					<li><a href="#<span class='deprecated'>取企业的部门和同事列表，不包括用户在线状态</span>"><span class='deprecated'>取企业的部门和同事列表，不包括用户在线状态</span></a></li>
+					<li><a href="#按部门取子部门和同事列表，包括用户在线状态">按部门取子部门和同事列表，包括用户在线状态</a></li>
+					<li><a href="#按部门取子部门和同事列表，不包括用户在线状态">按部门取子部门和同事列表，不包括用户在线状态</a></li>
+					<li><a href="#按部门取同事列表，不包括用户在线状态">按部门取同事列表，不包括用户在线状态</a></li>
+					<li><a href="#取可管理的部门列表">取可管理的部门列表</a></li>
+					<li><a href="#取管理员可管理的部门和同事列表，不包括用户在线状态">取管理员可管理的部门和同事列表，不包括用户在线状态</a></li>
+					<li><a href="#删除用户">删除用户</a></li>
+					<li><a href="#批量删除用户">批量删除用户</a></li>
+					<li><a href="#锁定用户">锁定用户</a></li>
+					<li><a href="#批量锁定用户">批量锁定用户</a></li>
+					<li><a href="#解锁用户">解锁用户</a></li>
+					<li><a href="#批量解锁用户">批量解锁用户</a></li>
+					<li><a href="#重置用户信息">重置用户信息</a></li>
+					<li><a href="#重置用户密码">重置用户密码</a></li>
+					<li><a href="#修改个人网盘空间">修改个人网盘空间</a></li>
+					<li><a href="#移动用户">移动用户</a></li>
+					<li><a href="#修改部门用户">修改部门用户</a></li>
+					<li><a href="#解析用户导入excel数据">解析用户导入excel数据</a></li>
+					<li><a href="#新建帐号">新建帐号</a></li>
+					<li><a href="#设置用户登录密码">设置用户登录密码</a></li>
+					<li><a href="#检查帐号是否已被使用">检查帐号是否已被使用</a></li>
+					<li><a href="#验证邮箱或手机">验证邮箱或手机</a></li>
+			</ul>
+		</div>
+
+		<div>
+				<p class="p-fun"><a name="统计企业在线用户数"></a>统计企业在线用户数</p>
+				<p><span>请求地址:</span>"/pub/statisticalUser"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li>无</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>企业Id,在线用户数</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500服务器内部错误</li>
+				</ul>
+				<p class="p-fun"><a name="修改用户头像"></a>修改用户头像</p>
+				<p><span>请求地址:</span>"/sc/user/changeUserIcon"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/ChangeUserIconParam.htm">ChangeUserIconParam</a>的JSON：用户头像修改信息</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：修改成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="修改用户在线状态"></a>修改用户在线状态</p>
+				<p><span>请求地址:</span>"/sc/user/changeOlineStatus"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/ChangeUserStatusParam.htm">ChangeUserStatusParam</a>的JSON：修改用户在线状态参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：修改成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取同事在线状态"></a>取同事在线状态</p>
+				<p><span>请求地址:</span>"/sc/user/getUserStatuses"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/UserStatusDTO.htm">UserStatusDTO</a>&gt的JSON：用户在线状态的list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="添加部门"></a>添加部门</p>
+				<p><span>请求地址:</span>"/sc/user/addDept"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/AddDepartmentParam.htm">AddDepartmentParam</a>的JSON：添加部门参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>deptId：部门id</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorSameName：部门名重复</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="<span class='deprecated'>添加同事</span>"></a><span class='deprecated'>添加同事</span></p>
+				<p><span>请求地址:</span>"/sc/user/addUser"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/AddUserParam.htm">AddUserParam</a>的JSON：添加同事参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>userId：用户id</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorCheckHashkey：数据未通过安全验证</li>
+							<li>errorEnterpriseNotExist：企业不存在</li>
+							<li>errorUserNoOver：用户数已经用完</li>
+							<li>errorPayExpired：购买的用户已经过期</li>
+							<li>errorEmployeeAlreadyExist：用户名已经存在</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="修改用户信息"></a>修改用户信息</p>
+				<p><span>请求地址:</span>"/sc/user/updateUserInfo"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/UpdateUserParam.htm">UpdateUserParam</a>的JSON：修改用户信息参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：修改成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="<span class='deprecated'>取用户信息</span>"></a><span class='deprecated'>取用户信息</span></p>
+				<p><span>请求地址:</span>"/sc/user/getUserInfo"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li>userId：用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/UserDTO.htm">UserDTO</a>的JSON：用户信息</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="按用户id取用户信息"></a>按用户id取用户信息</p>
+				<p><span>请求地址:</span>"/sc/user/getUserByUserId"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li>userId：用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/UserInfoDTO.htm">UserInfoDTO</a>的JSON：用户信息</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="导入用户"></a>导入用户</p>
+				<p><span>请求地址:</span>"/sc/user/importUser"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/ImportUserParam.htm">ImportUserParam</a>的JSON：导入用户参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：导入成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorCheckHashkey：数据未通过安全验证</li>
+							<li>errorEnterpriseNotExist：企业不存在</li>
+							<li>errorUserNoOver：用户数已经用完</li>
+							<li>errorPayExpired：购买的用户已经过期</li>
+							<li>errorEmployeeAlreadyExist：用户名已经存在</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="按用户取部门和同事列表，包括用户在线状态"></a>按用户取部门和同事列表，包括用户在线状态</p>
+				<p><span>请求地址:</span>"/sc/user/getDeptAndUserWithStatus"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/DeptAndUserDTO.htm">DeptAndUserDTO</a>的JSON：部门和同事list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="重命名部门"></a>重命名部门</p>
+				<p><span>请求地址:</span>"/sc/user/renameDept"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/RenameDepartmentParam.htm">RenameDepartmentParam</a>的JSON：重命名部门参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：重命名成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorSameName：部门名重复</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="删除部门"></a>删除部门</p>
+				<p><span>请求地址:</span>"/sc/user/deleteDept"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/DepartmentIdParam.htm">DepartmentIdParam</a>的JSON：部门id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：删除成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorDeleteDepartUserExist：存在子部门或同事，无法删除</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="修改部门排序"></a>修改部门排序</p>
+				<p><span>请求地址:</span>"/sc/user/updateDeptOrder"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/DepartmentOrderParam.htm">DepartmentOrderParam</a>的JSON：修改部门排序参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：修改部门排序成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取单个部门信息"></a>取单个部门信息</p>
+				<p><span>请求地址:</span>"/sc/user/getDeptById"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/DepartmentIdParam.htm">DepartmentIdParam</a>的JSON：部门id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/DepartmentDTO.htm">DepartmentDTO</a>的JSON：部门信息</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="<span class='deprecated'>取部门列表</span>"></a><span class='deprecated'>取部门列表</span></p>
+				<p><span>请求地址:</span>"/sc/user/getDeptList"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/DepartmentDTO.htm">DepartmentDTO</a>&gt的JSON：部门信息的list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="<span class='deprecated'>取企业的部门和同事列表，不包括用户在线状态</span>"></a><span class='deprecated'>取企业的部门和同事列表，不包括用户在线状态</span></p>
+				<p><span>请求地址:</span>"/sc/user/getDeptAndUser"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/DeptAndUserDTO.htm">DeptAndUserDTO</a>的JSON：部门和同事list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="按部门取子部门和同事列表，包括用户在线状态"></a>按部门取子部门和同事列表，包括用户在线状态</p>
+				<p><span>请求地址:</span>"/sc/user/getDeptAndUserWithStatusByDeptId"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/DepartmentIdParam.htm">DepartmentIdParam</a>的JSON：部门id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/DeptAndUserDTO.htm">DeptAndUserDTO</a>的JSON：部门和同事list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="按部门取子部门和同事列表，不包括用户在线状态"></a>按部门取子部门和同事列表，不包括用户在线状态</p>
+				<p><span>请求地址:</span>"/sc/user/getDeptAndUserByDeptId"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/DepartmentIdParam.htm">DepartmentIdParam</a>的JSON：部门id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/DeptAndUserDTO.htm">DeptAndUserDTO</a>的JSON：部门和同事list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="按部门取同事列表，不包括用户在线状态"></a>按部门取同事列表，不包括用户在线状态</p>
+				<p><span>请求地址:</span>"/sc/user/getUserByDeptId"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/DepartmentIdParam.htm">DepartmentIdParam</a>的JSON：部门id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/UserDTO.htm">UserDTO</a>&gt的JSON：用户信息的list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取可管理的部门列表"></a>取可管理的部门列表</p>
+				<p><span>请求地址:</span>"/sc/user/getAdminDeptList"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/DepartmentDTO.htm">DepartmentDTO</a>&gt的JSON：部门信息的list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取管理员可管理的部门和同事列表，不包括用户在线状态"></a>取管理员可管理的部门和同事列表，不包括用户在线状态</p>
+				<p><span>请求地址:</span>"/sc/user/getAdminDeptAndUser"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/DeptAndUserDTO.htm">DeptAndUserDTO</a>的JSON：部门和同事list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="删除用户"></a>删除用户</p>
+				<p><span>请求地址:</span>"/sc/user/deleteUser"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/DeleteUserParam.htm">DeleteUserParam</a>的JSON：删除用户参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：删除成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="批量删除用户"></a>批量删除用户</p>
+				<p><span>请求地址:</span>"/sc/user/deleteUsers"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/UserIdsParam.htm">UserIdsParam</a>的JSON：用户id的list参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：删除成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="锁定用户"></a>锁定用户</p>
+				<p><span>请求地址:</span>"/sc/user/lockUser"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/LockUserParam.htm">LockUserParam</a>的JSON：锁定用户参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：锁定成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="批量锁定用户"></a>批量锁定用户</p>
+				<p><span>请求地址:</span>"/sc/user/lockUsers"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/UserIdsParam.htm">UserIdsParam</a>的JSON：用户id的list参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：锁定成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="解锁用户"></a>解锁用户</p>
+				<p><span>请求地址:</span>"/sc/user/unlockUser"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/LockUserParam.htm">LockUserParam</a>的JSON：解锁用户参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：解锁成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="批量解锁用户"></a>批量解锁用户</p>
+				<p><span>请求地址:</span>"/sc/user/unlockUsers"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/UserIdsParam.htm">UserIdsParam</a>的JSON：用户id的list参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：解锁成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="重置用户信息"></a>重置用户信息</p>
+				<p><span>请求地址:</span>"/sc/user/resetUserInfo"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/ResetUserParam.htm">ResetUserParam</a>的JSON：重置用户信息参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：修改成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorSameName： 用户名重复</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="重置用户密码"></a>重置用户密码</p>
+				<p><span>请求地址:</span>"/sc/user/resetPassword"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/ResetPasswordParam.htm">ResetPasswordParam</a>的JSON：重置用户密码参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：修改成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorCheckHashkey：数据未通过安全验证</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="修改个人网盘空间"></a>修改个人网盘空间</p>
+				<p><span>请求地址:</span>"/sc/user/updatePersonalDiskSize"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/UpdatePersonalDiskSizeParam.htm">UpdatePersonalDiskSizeParam</a>的JSON：修改个人网盘空间参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：修改成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoSpace：企业网盘剩余空间不足分配</li>
+							<li>errorDiskUsedOver：网盘已使用空间超过分配空间</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="移动用户"></a>移动用户</p>
+				<p><span>请求地址:</span>"/sc/user/moveUser"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/MoveUserParam.htm">MoveUserParam</a>的JSON：移动用户参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：修改成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="修改部门用户"></a>修改部门用户</p>
+				<p><span>请求地址:</span>"/sc/user/updateDeptUser"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/UpdateDeptUserParam.htm">UpdateDeptUserParam</a>的JSON：修改部门用户参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：修改成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="解析用户导入excel数据"></a>解析用户导入excel数据</p>
+				<p><span>请求地址:</span>"/pub/user/parseImportUsers"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li>file：excel文件</li>
+							<li>postJsonData：<a href="../dto/BaseParam.htm">BaseParam</a>的JSON</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../status/ImportUserItem.htm">ImportUserItem</a>&gt的JSON：用户数据的list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="新建帐号"></a>新建帐号</p>
+				<p><span>请求地址:</span>"/sc/user/createUser"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/CreateUserParam.htm">CreateUserParam</a>的JSON：新建帐号参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>userId：用户id</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorUserNoOver：用户数已经用完</li>
+							<li>errorPayExpired：购买的用户已经过期</li>
+							<li>errorAccountUsed：帐号已经存在</li>
+							<li>errorLicense：license错误</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="设置用户登录密码"></a>设置用户登录密码</p>
+				<p><span>请求地址:</span>"/sc/pub/setUserPassword"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/SetPasswordParam.htm">SetPasswordParam</a>的JSON：设置用户登录密码参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：设置成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorCheckHashkey：数据未通过安全验证</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="检查帐号是否已被使用"></a>检查帐号是否已被使用</p>
+				<p><span>请求地址:</span>"/sc/user/checkAccount"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/AccountParam.htm">AccountParam</a>的JSON：帐号参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：验证成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorAccountUsed：帐号已被使用</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="验证邮箱或手机"></a>验证邮箱或手机</p>
+				<p><span>请求地址:</span>"/sc/user/verifyAccount"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/VerifyAccountParam.htm">VerifyAccountParam</a>的JSON：验证邮箱或手机参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：验证成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorAccountUsed：帐号已被使用</li>
+							<li>errorValidationCode：验证码错误</li>
+							<li>error500：系统错误</li>
+				</ul>
+		</div>
+	</div>
+</body>
+</html>

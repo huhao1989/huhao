@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/url.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="main">
+		<h2>融鑫汇众REST服务</h2>
+		<div class="ul-fun">
+			<h4>功能列表:</h4>
+			<ul>
+					<li><a href="#融鑫汇众客户注册">融鑫汇众客户注册</a></li>
+					<li><a href="#用户登录">用户登录</a></li>
+					<li><a href="#添加客户文件">添加客户文件</a></li>
+					<li><a href="#融鑫汇众创建企业网盘文件夹">融鑫汇众创建企业网盘文件夹</a></li>
+					<li><a href="#融资申请">融资申请</a></li>
+					<li><a href="#进度查询">进度查询</a></li>
+			</ul>
+		</div>
+
+		<div>
+				<p class="p-fun"><a name="融鑫汇众客户注册"></a>融鑫汇众客户注册</p>
+				<p><span>请求地址:</span>"/pub/rx/rxCustomerRegister"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/RxRegisterParam.htm">RxRegisterParam</a>的JSON：融鑫汇众客户注册参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：注册成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorCheckHashkey：数据未通过安全验证</li>
+							<li>errorEnterpriseAlreadyExist：企业已经存在</li>
+							<li>errorSameName：登录名重复</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="用户登录"></a>用户登录</p>
+				<p><span>请求地址:</span>"/pub/rx/rxCustomerLogon"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/RxLogonParam.htm">RxLogonParam</a>的JSON：用户登录参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/RxCustomerDTO.htm">RxCustomerDTO</a>的JSON：客户</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorCheckHashkey：数据未通过安全验证</li>
+							<li>errorWrongAccount：用户名错误</li>
+							<li>errorWrongPWD：密码错误</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="添加客户文件"></a>添加客户文件</p>
+				<p><span>请求地址:</span>"/sc/rx/addRxCustomerFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/AddCustomerFileParam.htm">AddCustomerFileParam</a>的JSON：添加文件参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EnterpriseFileDTO.htm">EnterpriseFileDTO</a>的JSON：文件信息</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorFolderSpaceOver：当前文件夹空间已满</li>
+							<li>errorNoSpace：企业网盘空间已满</li>
+							<li>errorSameFile：同一文件夹下存在同名文件</li>
+							<li>errorFolderDeleted：父文件夹已经删除</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="融鑫汇众创建企业网盘文件夹"></a>融鑫汇众创建企业网盘文件夹</p>
+				<p><span>请求地址:</span>"/sc/rx/createRxFolder"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/RxCreateFolderParam.htm">RxCreateFolderParam</a>的JSON：创建网盘文件夹参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EnterpriseFolderDTO.htm">EnterpriseFolderDTO</a>的JSON：返回文件夹信息，创建文件夹成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorSameFolder：父目录下已经有与此同名的目录存在</li>
+							<li>errorFolderDeleted：父文件夹已经被删除</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="融资申请"></a>融资申请</p>
+				<p><span>请求地址:</span>"/sc/rx/applyFinance"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FinanceApplyParam.htm">FinanceApplyParam</a>的JSON：融资申请参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：提交成功</li>
+							<li>{@link List</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="进度查询"></a>进度查询</p>
+				<p><span>请求地址:</span>"/sc/rx/getProgresses"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li>customerId：客户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/RxProgressDTO.htm">RxProgressDTO</a>&gt的JSON：任务进度</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+		</div>
+	</div>
+</body>
+</html>

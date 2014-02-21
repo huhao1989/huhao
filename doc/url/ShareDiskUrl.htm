@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/url.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="main">
+		<h2>企业网盘REST服务</h2>
+		<div class="ul-fun">
+			<h4>功能列表:</h4>
+			<ul>
+					<li><a href="#批量添加企业网盘文件">批量添加企业网盘文件</a></li>
+					<li><a href="#创建企业网盘文件夹">创建企业网盘文件夹</a></li>
+					<li><a href="#检查企业网盘文件是否可以上传">检查企业网盘文件是否可以上传</a></li>
+					<li><a href="#添加企业网盘文件">添加企业网盘文件</a></li>
+					<li><a href="#检查企业网盘文件是否可以同步上传">检查企业网盘文件是否可以同步上传</a></li>
+					<li><a href="#同步企业网盘文件">同步企业网盘文件</a></li>
+					<li><a href="#保存企业网盘文件(包含新建企业网盘文件)">保存企业网盘文件(包含新建企业网盘文件)</a></li>
+					<li><a href="#检查编辑企业网盘文件">检查编辑企业网盘文件</a></li>
+					<li><a href="#修改企业网盘文件页数">修改企业网盘文件页数</a></li>
+					<li><a href="#按文件夹id取企业网盘文件夹和文件">按文件夹id取企业网盘文件夹和文件</a></li>
+					<li><a href="#按多个文件夹id取企业网盘文件夹和文件">按多个文件夹id取企业网盘文件夹和文件</a></li>
+					<li><a href="#<span class='deprecated'>按用户id取企业网盘文件夹列表</span>"><span class='deprecated'>按用户id取企业网盘文件夹列表</span></a></li>
+					<li><a href="#<span class='deprecated'>按企业id取企业网盘文件夹列表</span>"><span class='deprecated'>按企业id取企业网盘文件夹列表</span></a></li>
+					<li><a href="#<span class='deprecated'>按用户id取企业网盘文件夹和文件列表</span>"><span class='deprecated'>按用户id取企业网盘文件夹和文件列表</span></a></li>
+					<li><a href="#取企业网盘回收站中文件夹和文件">取企业网盘回收站中文件夹和文件</a></li>
+					<li><a href="#分页取企业网盘回收站中文件夹和文件">分页取企业网盘回收站中文件夹和文件</a></li>
+					<li><a href="#锁定企业网盘文件">锁定企业网盘文件</a></li>
+					<li><a href="#解锁企业网盘文件">解锁企业网盘文件</a></li>
+					<li><a href="#企业网盘全局搜索文件">企业网盘全局搜索文件</a></li>
+					<li><a href="#取文件夹的嵌套子文件夹和文件的复杂结构">取文件夹的嵌套子文件夹和文件的复杂结构</a></li>
+					<li><a href="#企业网盘文件移动">企业网盘文件移动</a></li>
+					<li><a href="#企业网盘文件夹移动">企业网盘文件夹移动</a></li>
+					<li><a href="#企业网盘移动文件夹和文件">企业网盘移动文件夹和文件</a></li>
+					<li><a href="#企业网盘文件重命名">企业网盘文件重命名</a></li>
+					<li><a href="#企业网盘文件夹重命名">企业网盘文件夹重命名</a></li>
+					<li><a href="#删除企业网盘回收站文件">删除企业网盘回收站文件</a></li>
+					<li><a href="#删除企业网盘回收站文件夹">删除企业网盘回收站文件夹</a></li>
+					<li><a href="#删除企业网盘回收站文件夹和文件">删除企业网盘回收站文件夹和文件</a></li>
+					<li><a href="#清空企业网盘回收站 (只有超级管理员才有权限)">清空企业网盘回收站 (只有超级管理员才有权限)</a></li>
+					<li><a href="#从企业网盘回收站恢复文件">从企业网盘回收站恢复文件</a></li>
+					<li><a href="#从企业网盘回收站恢复文件夹">从企业网盘回收站恢复文件夹</a></li>
+					<li><a href="#从企业网盘回收站恢复文件夹和文件">从企业网盘回收站恢复文件夹和文件</a></li>
+					<li><a href="#删除企业网盘文件至回收站">删除企业网盘文件至回收站</a></li>
+					<li><a href="#删除企业网盘文件夹至回收站">删除企业网盘文件夹至回收站</a></li>
+					<li><a href="#删除企业网盘文件夹和文件至回收站">删除企业网盘文件夹和文件至回收站</a></li>
+					<li><a href="#取文件夹的所有父文件夹id">取文件夹的所有父文件夹id</a></li>
+					<li><a href="#取文件的所有父文件夹id">取文件的所有父文件夹id</a></li>
+					<li><a href="#设置企业网盘文件缩略图">设置企业网盘文件缩略图</a></li>
+					<li><a href="#设置企业网盘文件备注">设置企业网盘文件备注</a></li>
+					<li><a href="#设置企业网盘文件夹备注">设置企业网盘文件夹备注</a></li>
+					<li><a href="#取单个企业网盘文件信息">取单个企业网盘文件信息</a></li>
+					<li><a href="#取单个企业网盘文件夹信息">取单个企业网盘文件夹信息</a></li>
+					<li><a href="#按文件夹id和文件id取企业网盘文件夹和文件">按文件夹id和文件id取企业网盘文件夹和文件</a></li>
+					<li><a href="#更新企业网盘文件转换状态">更新企业网盘文件转换状态</a></li>
+					<li><a href="#更新企业网盘文件同步状态">更新企业网盘文件同步状态</a></li>
+					<li><a href="#取企业网盘中未转换的文件">取企业网盘中未转换的文件</a></li>
+					<li><a href="#<span class='deprecated'>插入企业网盘文件访问记录，包括下载和浏览记录</span>"><span class='deprecated'>插入企业网盘文件访问记录，包括下载和浏览记录</span></a></li>
+					<li><a href="#取单个企业网盘文件信息（不包含状态信息）">取单个企业网盘文件信息（不包含状态信息）</a></li>
+					<li><a href="#取单个企业网盘文件夹信息（不包含状态信息）">取单个企业网盘文件夹信息（不包含状态信息）</a></li>
+					<li><a href="#取企业网盘已使用空间">取企业网盘已使用空间</a></li>
+					<li><a href="#按可管理的取企业网盘文件夹列表">按可管理的取企业网盘文件夹列表</a></li>
+					<li><a href="#设置企业网盘文件夹空间">设置企业网盘文件夹空间</a></li>
+					<li><a href="#取企业网盘中未同步到文件服务器的文件">取企业网盘中未同步到文件服务器的文件</a></li>
+					<li><a href="#取文件夹的所有父文件夹">取文件夹的所有父文件夹</a></li>
+					<li><a href="#取文件夹的所有父文件夹和自身信息">取文件夹的所有父文件夹和自身信息</a></li>
+					<li><a href="#取文件的所有父文件夹">取文件的所有父文件夹</a></li>
+					<li><a href="#按文件夹分页取子文件夹和文件">按文件夹分页取子文件夹和文件</a></li>
+					<li><a href="#按文件夹id取可管理的文件夹">按文件夹id取可管理的文件夹</a></li>
+					<li><a href="#取顶级目录文件夹空间列表">取顶级目录文件夹空间列表</a></li>
+					<li><a href="#更新企业文件的md5服务">更新企业文件的md5服务</a></li>
+					<li><a href="#获得没有md5的企业文件列表">获得没有md5的企业文件列表</a></li>
+					<li><a href="#按文件夹id取企业网盘文件夹">按文件夹id取企业网盘文件夹</a></li>
+			</ul>
+		</div>
+
+		<div>
+				<p class="p-fun"><a name="批量添加企业网盘文件"></a>批量添加企业网盘文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/addEntFiles"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/AddFilesParam.htm">AddFilesParam</a>的JSON：批量添加企业网盘文件参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/EnterpriseFileDTO.htm">EnterpriseFileDTO</a>&gt的JSON：添加的文件集合</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有权限</li>
+							<li>errorSameFile：目录下已经有与此同名的文件存在</li>
+							<li>errorFolderSpaceOver：当前文件夹空间已满(当文件夹MaxSize=0 无此异常)</li>
+							<li>errorNoSpace：企业网盘空间已满</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="创建企业网盘文件夹"></a>创建企业网盘文件夹</p>
+				<p><span>请求地址:</span>"/sc/entDisk/createEntFolder"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/CreateFolderParam.htm">CreateFolderParam</a>的JSON：创建网盘文件夹参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EnterpriseFolderDTO.htm">EnterpriseFolderDTO</a>的JSON：返回文件夹信息，创建文件夹成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有父目录下的编辑权限</li>
+							<li>errorSameFolder：父目录下已经有与此同名的目录存在</li>
+							<li>errorFolderDeleted：父文件夹已经被删除</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="检查企业网盘文件是否可以上传"></a>检查企业网盘文件是否可以上传</p>
+				<p><span>请求地址:</span>"/sc/entDisk/checkEntFileUpload"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/CheckFileUploadParam.htm">CheckFileUploadParam</a>的JSON：检查文件上传参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：正常，可以上传</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：用户没有当前文件夹下的上传权限</li>
+							<li>errorFolderSpaceOver：当前文件夹空间已满</li>
+							<li>errorNoSpace：企业网盘空间已满</li>
+							<li>errorSameFile：同一文件夹下存在同名文件</li>
+							<li>errorFolderDeleted：父文件已被删除</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="添加企业网盘文件"></a>添加企业网盘文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/addEntFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/AddFileParam.htm">AddFileParam</a>的JSON：添加文件参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EnterpriseFileDTO.htm">EnterpriseFileDTO</a>的JSON：文件信息</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：用户没有当前文件夹下的上传权限</li>
+							<li>errorFolderSpaceOver：当前文件夹空间已满(当文件夹MaxSize=0 无此异常)</li>
+							<li>errorNoSpace：企业网盘空间已满</li>
+							<li>errorSameFile：同一文件夹下存在同名文件</li>
+							<li>errorFolderDeleted：父文件夹已经删除</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="检查企业网盘文件是否可以同步上传"></a>检查企业网盘文件是否可以同步上传</p>
+				<p><span>请求地址:</span>"/sc/entDisk/checkSyncEntFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/CheckSaveFileParam.htm">CheckSaveFileParam</a>的JSON：检查文件同步参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：正常，可以开始上传文件</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorFileLocked：文件被他人锁定</li>
+							<li>errorVersionConflict：版本冲突</li>
+							<li>errorFolderDeleted：父文件已被删除</li>
+							<li>errorNoPermission：没有本地同步权限</li>
+							<li>errorFolderSpaceOver：文件夹空间已满</li>
+							<li>errorNoSpace：企业网盘空间已满</li>
+							<li>errorSameFile：同一文件夹下存在同名文件</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="同步企业网盘文件"></a>同步企业网盘文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/syncEntFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/SaveFileParam.htm">SaveFileParam</a>的JSON：文件同步参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EnterpriseFileDTO.htm">EnterpriseFileDTO</a>的JSON：同步后的文件信息</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：用户没有当前文件夹下的本地同步权限</li>
+							<li>errorFolderSpaceOver：当前文件夹空间已满</li>
+							<li>errorNoSpace：企业网盘空间已满</li>
+							<li>errorSameFile：同一文件夹下存在同名文件</li>
+							<li>errorVersionConflict：版本冲突</li>
+							<li>errorFileLocked：文件被人他人锁定</li>
+							<li>errorFolderDeleted：父文件已被删除</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="保存企业网盘文件(包含新建企业网盘文件)"></a>保存企业网盘文件(包含新建企业网盘文件)</p>
+				<p><span>请求地址:</span>"/sc/entDisk/saveEntFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/SaveFileParam.htm">SaveFileParam</a>的JSON：文件保存参数 (只传folderId为新建文件，只传fileId为保存文件)</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EnterpriseFileDTO.htm">EnterpriseFileDTO</a>的JSON：文件信息</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorFileLocked：文件被他人锁定</li>
+							<li>errorNoPermission：没有编辑权限</li>
+							<li>errorVersionConflict：版本冲突</li>
+							<li>errorSameFile：同一文件夹下存在同名文件</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="检查编辑企业网盘文件"></a>检查编辑企业网盘文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/checkEditEntFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntFileParam.htm">EntFileParam</a>的JSON：企业网盘文件参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：正常,可以编辑</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorFileLocked：文件被他人锁定</li>
+							<li>errorNoPermission：没有编辑权限</li>
+							<li>errorVersionConflict：版本冲突</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="修改企业网盘文件页数"></a>修改企业网盘文件页数</p>
+				<p><span>请求地址:</span>"/pub/entDisk/updateEntFilePageCount"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FilePageCountParam.htm">FilePageCountParam</a>的JSON：文件页数参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：修改成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="按文件夹id取企业网盘文件夹和文件"></a>按文件夹id取企业网盘文件夹和文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntFolderAndFileByFolderId"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FolderIdParam.htm">FolderIdParam</a>的JSON：文件夹参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EntFolderAndFileDTO.htm">EntFolderAndFileDTO</a>的JSON：企业网盘文件夹list和文件list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="按多个文件夹id取企业网盘文件夹和文件"></a>按多个文件夹id取企业网盘文件夹和文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntFolderAndFileByFolderIds"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FolderIdsParam.htm">FolderIdsParam</a>的JSON：文件夹list参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EntFolderAndFileDTO.htm">EntFolderAndFileDTO</a>的JSON：企业网盘文件夹list和文件list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="<span class='deprecated'>按用户id取企业网盘文件夹列表</span>"></a><span class='deprecated'>按用户id取企业网盘文件夹列表</span></p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntFolderByUserId"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/EnterpriseFolderDTO.htm">EnterpriseFolderDTO</a>&gt的JSON：企业网盘文件夹的list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="<span class='deprecated'>按企业id取企业网盘文件夹列表</span>"></a><span class='deprecated'>按企业id取企业网盘文件夹列表</span></p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntFolderByEntId"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/EnterpriseFolderDTO.htm">EnterpriseFolderDTO</a>&gt的JSON：企业网盘文件夹的list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="<span class='deprecated'>按用户id取企业网盘文件夹和文件列表</span>"></a><span class='deprecated'>按用户id取企业网盘文件夹和文件列表</span></p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntFolderAndFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EntFolderAndFileDTO.htm">EntFolderAndFileDTO</a>的JSON：企业网盘文件夹list和文件list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取企业网盘回收站中文件夹和文件"></a>取企业网盘回收站中文件夹和文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getRecycleEntFolderAndFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EntFolderAndFileDTO.htm">EntFolderAndFileDTO</a>的JSON：企业网盘文件夹list和文件list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="分页取企业网盘回收站中文件夹和文件"></a>分页取企业网盘回收站中文件夹和文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getPagedRecycleEntFolderAndFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/PageQueryParam.htm">PageQueryParam</a>的JSON：分页参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EntFolderAndFileDTO.htm">EntFolderAndFileDTO</a>的JSON：企业网盘文件夹list和文件list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="锁定企业网盘文件"></a>锁定企业网盘文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/lockEntFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FileIdParam.htm">FileIdParam</a>的JSON：企业网盘文件id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：锁定成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorFileLocked：文件已被他人锁定</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="解锁企业网盘文件"></a>解锁企业网盘文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/unlockEntFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FileIdParam.htm">FileIdParam</a>的JSON：企业网盘文件id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：解锁成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorFileLocked：文件被他人锁定</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="企业网盘全局搜索文件"></a>企业网盘全局搜索文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/searchEntFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/SearchParam.htm">SearchParam</a>的JSON：搜索参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/SearchEntFileDTO.htm">SearchEntFileDTO</a>&gt的JSON：企业网盘搜索文件list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取文件夹的嵌套子文件夹和文件的复杂结构"></a>取文件夹的嵌套子文件夹和文件的复杂结构</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntComplexFolder"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntComplexFolderParam.htm">EntComplexFolderParam</a>的JSON</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/ComplexFolderDTO.htm">ComplexFolderDTO</a>的JSON</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="企业网盘文件移动"></a>企业网盘文件移动</p>
+				<p><span>请求地址:</span>"/sc/entDisk/moveEntFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/MoveEntFileParam.htm">MoveEntFileParam</a>的JSON：企业网盘文件移动参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：移动成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有此文件的编辑权限</li>
+							<li>errorSameFile：目标文件夹下已经有与此同名的文件存在</li>
+							<li>errorFileLocked：文件被人他人锁定</li>
+							<li>errorVersionConflict：文件版本冲突</li>
+							<li>errorFolderSpaceOver：目标文件夹空间已满</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="企业网盘文件夹移动"></a>企业网盘文件夹移动</p>
+				<p><span>请求地址:</span>"/sc/entDisk/moveEntFolder"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/MoveEntFolderParam.htm">MoveEntFolderParam</a>的JSON：企业网盘文件夹移动参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：移动成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有此目录的编辑权限</li>
+							<li>errorSameFolder：目标文件夹下已经有与此同名的文件夹存在</li>
+							<li>errorVersionConflict：文件夹版本冲突</li>
+							<li>errorMoveToSubFolder：移动文件夹到其子文件错误</li>
+							<li>errorFolderSpaceOver：目标文件夹空间已满</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="企业网盘移动文件夹和文件"></a>企业网盘移动文件夹和文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/moveEntFolderAndFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/MoveEntFolderAndFileParam.htm">MoveEntFolderAndFileParam</a>的JSON：企业网盘移动文件夹和文件参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：移动成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有权限</li>
+							<li>errorSameFolder：目标文件夹下已经有与此同名的文件夹存在</li>
+							<li>errorSameFile：目标文件夹下已经有与此同名的文件存在</li>
+							<li>errorFileLocked：文件被人他人锁定</li>
+							<li>errorVersionConflict：版本冲突</li>
+							<li>errorMoveToSubFolder：移动文件夹到其子文件错误</li>
+							<li>errorFolderSpaceOver：目标文件夹空间已满</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="企业网盘文件重命名"></a>企业网盘文件重命名</p>
+				<p><span>请求地址:</span>"/sc/entDisk/renameEntFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/RenameEntFileParam.htm">RenameEntFileParam</a>的JSON：企业网盘文件重命名参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：重命名成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有此文件的编辑权限</li>
+							<li>errorSameFile：文件夹下已经有与此同名的文件存在</li>
+							<li>errorFileLocked：文件被人他人锁定</li>
+							<li>errorVersionConflict：文件版本冲突</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="企业网盘文件夹重命名"></a>企业网盘文件夹重命名</p>
+				<p><span>请求地址:</span>"/sc/entDisk/renameEntFolder"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/RenameEntFolderParam.htm">RenameEntFolderParam</a>的JSON：企业网盘文件夹重命名参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：重命名成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有此文件夹的编辑权限</li>
+							<li>errorSameFolder：文件夹下已经有与此同名的文件夹存在</li>
+							<li>errorVersionConflict：文件夹版本冲突</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="删除企业网盘回收站文件"></a>删除企业网盘回收站文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/deleteRecycleEntFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntFileParam.htm">EntFileParam</a>的JSON：企业网盘文件参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：删除成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有此文件的删除权限</li>
+							<li>errorVersionConflict：文件版本冲突</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="删除企业网盘回收站文件夹"></a>删除企业网盘回收站文件夹</p>
+				<p><span>请求地址:</span>"/sc/entDisk/deleteRecycleEntFolder"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntFolderParam.htm">EntFolderParam</a>的JSON：企业网盘文件夹参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：删除成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有此目录的删除权限</li>
+							<li>errorVersionConflict：文件夹版本冲突</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="删除企业网盘回收站文件夹和文件"></a>删除企业网盘回收站文件夹和文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/deleteRecycleEntFolderAndFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntFolderAndFileParam.htm">EntFolderAndFileParam</a>的JSON：企业网盘文件夹和文件参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：删除成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有权限</li>
+							<li>errorVersionConflict：版本冲突</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="清空企业网盘回收站 (只有超级管理员才有权限)"></a>清空企业网盘回收站 (只有超级管理员才有权限)</p>
+				<p><span>请求地址:</span>"/sc/entDisk/emptyEntRecycle"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：清空成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有权限</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="从企业网盘回收站恢复文件"></a>从企业网盘回收站恢复文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/restoreEntFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntFileParam.htm">EntFileParam</a>的JSON：企业网盘文件参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：恢复成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有此文件的删除权限</li>
+							<li>errorVersionConflict：文件版本冲突</li>
+							<li>errorSameFile：目标文件夹下已经有与此同名的文件存在</li>
+							<li>errorNoSpace：企业网盘空间不足</li>
+							<li>errorFolderSpaceOver：目标文件夹空间已满</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="从企业网盘回收站恢复文件夹"></a>从企业网盘回收站恢复文件夹</p>
+				<p><span>请求地址:</span>"/sc/entDisk/restoreEntFolder"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntFolderParam.htm">EntFolderParam</a>的JSON：企业网盘文件夹参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：恢复成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有此目录的删除权限</li>
+							<li>errorVersionConflict：文件夹版本冲突</li>
+							<li>errorSameFolder：目标文件夹下已经有与此同名的文件夹存在</li>
+							<li>errorNoSpace：企业网盘空间不足</li>
+							<li>errorFolderSpaceOver：目标文件夹空间已满</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="从企业网盘回收站恢复文件夹和文件"></a>从企业网盘回收站恢复文件夹和文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/restoreEntFolderAndFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntFolderAndFileParam.htm">EntFolderAndFileParam</a>的JSON：企业网盘文件夹和文件参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：恢复成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有权限</li>
+							<li>errorVersionConflict：版本冲突</li>
+							<li>errorSameFolder：目标文件夹下已经有与此同名的文件夹存在</li>
+							<li>errorSameFile：目标文件夹下已经有与此同名的文件存在</li>
+							<li>errorNoSpace：企业网盘空间不足</li>
+							<li>errorFolderSpaceOver：目标文件夹空间已满</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="删除企业网盘文件至回收站"></a>删除企业网盘文件至回收站</p>
+				<p><span>请求地址:</span>"/sc/entDisk/deleteEntFileToRecycle"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntFileParam.htm">EntFileParam</a>的JSON：企业网盘文件参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：删除成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有此文件的删除权限</li>
+							<li>errorVersionConflict：文件版本冲突</li>
+							<li>errorFileLocked：文件被人他人锁定</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="删除企业网盘文件夹至回收站"></a>删除企业网盘文件夹至回收站</p>
+				<p><span>请求地址:</span>"/sc/entDisk/deleteEntFolderToRecycle"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntFolderParam.htm">EntFolderParam</a>的JSON：企业网盘文件夹参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：删除成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有此目录的删除权限</li>
+							<li>errorVersionConflict：文件夹版本冲突</li>
+							<li>errorFileLocked：文件被人他人锁定</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="删除企业网盘文件夹和文件至回收站"></a>删除企业网盘文件夹和文件至回收站</p>
+				<p><span>请求地址:</span>"/sc/entDisk/deleteEntFolderAndFileToRecycle"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntFolderAndFileParam.htm">EntFolderAndFileParam</a>的JSON：企业网盘文件夹和文件参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：删除成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有权限</li>
+							<li>errorVersionConflict：版本冲突</li>
+							<li>errorFileLocked：文件被人他人锁定</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取文件夹的所有父文件夹id"></a>取文件夹的所有父文件夹id</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntParentIdsByFolder"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FolderIdParam.htm">FolderIdParam</a>的JSON：企业网盘文件夹参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../status/Long.htm">Long</a>&gt的JSON：父文件夹id的list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有此文件夹的浏览权限</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取文件的所有父文件夹id"></a>取文件的所有父文件夹id</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntParentIdsByFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FileIdParam.htm">FileIdParam</a>的JSON：企业网盘文件参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../status/Long.htm">Long</a>&gt的JSON：父文件夹id的list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有此文件的浏览权限</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="设置企业网盘文件缩略图"></a>设置企业网盘文件缩略图</p>
+				<p><span>请求地址:</span>"/sc/entDisk/updateEntFileThumb"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntFileThumbParam.htm">EntFileThumbParam</a>的JSON：企业网盘文件缩略图参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：设置缩略图成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有此文件的编辑权限</li>
+							<li>errorFileLocked：文件被人他人锁定</li>
+							<li>errorVersionConflict：文件版本冲突</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="设置企业网盘文件备注"></a>设置企业网盘文件备注</p>
+				<p><span>请求地址:</span>"/sc/entDisk/updateEntFileRemark"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntFileRemarkParam.htm">EntFileRemarkParam</a>的JSON：企业网盘文件备注参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：设置备注成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有此文件的编辑权限</li>
+							<li>errorFileLocked：文件被人他人锁定</li>
+							<li>errorVersionConflict：文件版本冲突</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="设置企业网盘文件夹备注"></a>设置企业网盘文件夹备注</p>
+				<p><span>请求地址:</span>"/sc/entDisk/updateEntFolderRemark"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntFolderRemarkParam.htm">EntFolderRemarkParam</a>的JSON：企业网盘文件夹备注参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：设置备注成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有此文件夹的编辑权限</li>
+							<li>errorVersionConflict：文件夹版本冲突</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取单个企业网盘文件信息"></a>取单个企业网盘文件信息</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FileIdParam.htm">FileIdParam</a>的JSON：企业网盘文件id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EnterpriseFileDTO.htm">EnterpriseFileDTO</a>的JSON：企业网盘文件信息</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取单个企业网盘文件夹信息"></a>取单个企业网盘文件夹信息</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntFolder"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FolderIdParam.htm">FolderIdParam</a>的JSON：企业网盘文件夹id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EnterpriseFolderDTO.htm">EnterpriseFolderDTO</a>的JSON：企业网盘文件夹信息</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="按文件夹id和文件id取企业网盘文件夹和文件"></a>按文件夹id和文件id取企业网盘文件夹和文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntFolderAndFileById"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/EntFolderAndFileIdParam.htm">EntFolderAndFileIdParam</a>的JSON：文件夹id和文件id基本参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EntFolderAndFileDTO.htm">EntFolderAndFileDTO</a>的JSON：企业网盘文件夹list和文件list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="更新企业网盘文件转换状态"></a>更新企业网盘文件转换状态</p>
+				<p><span>请求地址:</span>"/pub/entDisk/updateEntFileConvStatus"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FileStatusParam.htm">FileStatusParam</a>的JSON：文件状态修改参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：修改成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="更新企业网盘文件同步状态"></a>更新企业网盘文件同步状态</p>
+				<p><span>请求地址:</span>"/pub/entDisk/updateEntFileSyncStatus"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FileStatusParam.htm">FileStatusParam</a>的JSON：文件状态修改参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：修改成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取企业网盘中未转换的文件"></a>取企业网盘中未转换的文件</p>
+				<p><span>请求地址:</span>"/pub/entDisk/getUnConvertedEntFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li>无</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/EnterpriseFileDTO.htm">EnterpriseFileDTO</a>&gt的JSON：企业网盘文件list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="<span class='deprecated'>插入企业网盘文件访问记录，包括下载和浏览记录</span>"></a><span class='deprecated'>插入企业网盘文件访问记录，包括下载和浏览记录</span></p>
+				<p><span>请求地址:</span>"/sc/entDisk/insertFileAccessLog"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FileStatusParam.htm">FileStatusParam</a>的JSON：文件状态修改参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：插入成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取单个企业网盘文件信息（不包含状态信息）"></a>取单个企业网盘文件信息（不包含状态信息）</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntFileById"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FileIdParam.htm">FileIdParam</a>的JSON：文件id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EnterpriseFileDTO.htm">EnterpriseFileDTO</a>的JSON：企业网盘文件信息</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取单个企业网盘文件夹信息（不包含状态信息）"></a>取单个企业网盘文件夹信息（不包含状态信息）</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntFolderById"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FolderIdParam.htm">FolderIdParam</a>的JSON：企业网盘文件夹id参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EnterpriseFolderDTO.htm">EnterpriseFolderDTO</a>的JSON：企业网盘文件夹信息</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取企业网盘已使用空间"></a>取企业网盘已使用空间</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntDiskUsedSize"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>企业网盘已使用空间，long型，单位KB</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="按可管理的取企业网盘文件夹列表"></a>按可管理的取企业网盘文件夹列表</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getAdminEntFolders"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/EnterpriseFolderDTO.htm">EnterpriseFolderDTO</a>&gt的JSON：企业网盘文件夹的list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="设置企业网盘文件夹空间"></a>设置企业网盘文件夹空间</p>
+				<p><span>请求地址:</span>"/sc/entDisk/updateEntFolderSize"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FolderSizeParam.htm">FolderSizeParam</a>的JSON：文件夹空间参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：设置成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorFolderSpaceOver：已使用空间超过分配空间</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取企业网盘中未同步到文件服务器的文件"></a>取企业网盘中未同步到文件服务器的文件</p>
+				<p><span>请求地址:</span>"/pub/entDisk/getUnSyncEntFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li>无</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/EnterpriseFileDTO.htm">EnterpriseFileDTO</a>&gt的JSON：企业网盘文件list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+							<li>errorFolderMaxSize 传入的maxSize</li>
+				</ul>
+				<p class="p-fun"><a name="取文件夹的所有父文件夹"></a>取文件夹的所有父文件夹</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getParentEntFoldersByFolder"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FolderIdParam.htm">FolderIdParam</a>的JSON：企业网盘文件夹参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/EnterpriseFolderDTO.htm">EnterpriseFolderDTO</a>&gt的JSON：父文件夹的list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有此文件夹的浏览权限</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取文件夹的所有父文件夹和自身信息"></a>取文件夹的所有父文件夹和自身信息</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getParentEntFoldersAndSelfByFolder"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FolderIdParam.htm">FolderIdParam</a>的JSON：企业网盘文件夹参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/EnterpriseFolderDTO.htm">EnterpriseFolderDTO</a>&gt的JSON：父文件夹的list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有此文件夹的浏览权限</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取文件的所有父文件夹"></a>取文件的所有父文件夹</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getParentEntFoldersByFile"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FileIdParam.htm">FileIdParam</a>的JSON：企业网盘文件参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/EnterpriseFolderDTO.htm">EnterpriseFolderDTO</a>&gt的JSON：父文件夹的list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有此文件的浏览权限</li>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="按文件夹分页取子文件夹和文件"></a>按文件夹分页取子文件夹和文件</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getPagedEntFilesByFolder"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/PageFileQueryParam.htm">PageFileQueryParam</a>的JSON：分页取文件夹和文件参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EntFolderAndFileDTO.htm">EntFolderAndFileDTO</a>的JSON：企业网盘文件夹和文件list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="按文件夹id取可管理的文件夹"></a>按文件夹id取可管理的文件夹</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getAdminFoldersFolderId"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FolderIdParam.htm">FolderIdParam</a>的JSON：文件夹参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EntFolderAndFileDTO.htm">EntFolderAndFileDTO</a>的JSON：企业网盘文件夹list和文件list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="取顶级目录文件夹空间列表"></a>取顶级目录文件夹空间列表</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntFolderSizes"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/BaseParam.htm">BaseParam</a>的JSON：企业id和用户id</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/FolderSizeDTO.htm">FolderSizeDTO</a>&gt 的JSON：文件夹空间列表</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="更新企业文件的md5服务"></a>更新企业文件的md5服务</p>
+				<p><span>请求地址:</span>"/pub/entDisk/updateEntFileMd5"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/UpdateMd5Param.htm">UpdateMd5Param</a>的JSON： 更新md5参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../status/CommConstants.htm#OK_MARK">CommConstants.OK_MARK</a>：设置成功</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="获得没有md5的企业文件列表"></a>获得没有md5的企业文件列表</p>
+				<p><span>请求地址:</span>"/pub/entDisk/getEntFileOfNoMd5"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li>无</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li>List&lt<a href="../dto/EnterpriseFileDTO.htm">EnterpriseFileDTO</a>&gt的JSON：没有md5的企业文件列表</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>error500：系统错误</li>
+				</ul>
+				<p class="p-fun"><a name="按文件夹id取企业网盘文件夹"></a>按文件夹id取企业网盘文件夹</p>
+				<p><span>请求地址:</span>"/sc/entDisk/getEntFoldersByFolderId"</p>
+				<p><span>参数:</span></p>
+				<ul>
+							<li><a href="../dto/FolderIdParam.htm">FolderIdParam</a>的JSON：文件夹参数</li>
+				</ul>
+				<p><span>正常返回:</span></p>
+				<ul>
+							<li><a href="../dto/EnterpriseFoldersDTO.htm">EnterpriseFoldersDTO</a>的JSON：企业网盘文件夹list</li>
+				</ul>
+				<p><span>异常返回:</span>
+				</p>
+				<ul>
+							<li>errorNoPermission：没有此文件的浏览权限</li>
+							<li>error500：系统错误</li>
+				</ul>
+		</div>
+	</div>
+</body>
+</html>
